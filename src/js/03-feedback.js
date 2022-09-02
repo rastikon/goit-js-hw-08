@@ -7,7 +7,7 @@ const email = document.querySelector('input');
 
 populateInput();
 
-form = document.querySelector('.feedback-form');
+const form = document.querySelector('.feedback-form');
 form.addEventListener('submit', onFormSubmit);
 form.addEventListener('input', throttle(onInputForm, 500));
 
