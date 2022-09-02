@@ -3,6 +3,7 @@ import throttle from 'lodash.throttle';
 const STORAGE_KEY = 'feedback-form-state';
 
 const formData = {};
+const email = document.querySelector('input');
 
 populateInput();
 
@@ -13,6 +14,10 @@ form.addEventListener('input', throttle(onInputForm, 500));
 //Відправка форми
 function onFormSubmit(evt) {
   evt.preventDefault();
+  if (!email.value) {
+    alert('Поле email має бути заповнене');
+    return;
+  }
   evt.currentTarget.reset();
   console.log(JSON.parse(localStorage.getItem(STORAGE_KEY)));
   localStorage.removeItem(STORAGE_KEY);
