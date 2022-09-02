@@ -31,8 +31,8 @@ function onInputForm(evt) {
 
 //Фукнція вставляє дані із localStorage
 function populateInput() {
-  input = document.querySelector('input');
-  textarea = document.querySelector('textarea');
+  const input = document.querySelector('input');
+  const textarea = document.querySelector('textarea');
 
   if (localStorage.getItem(STORAGE_KEY)) {
     input.value = JSON.parse(localStorage.getItem(STORAGE_KEY)).email;
